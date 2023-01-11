@@ -1,7 +1,7 @@
 @import "../../globalStyles/variables.scss";
 
 .header {
-	background: $lightDark;
+	background: $headerBackgroundColor;
 	box-shadow: 0px 30px 60px rgba(34, 31, 32, 0.2);
 	font-family: "Ubuntu-Light";
 
@@ -22,12 +22,12 @@
 		left: 0;
 		height: 100vh;
 		padding-top: 20px;
-		background: $blackBackgroundGradient;
+		background: $navBackgroundColor;
 		transform: translate(-100%, 0);
 		transition: all 0.7s ease-in-out;
 
 		h2 {
-			color: $white;
+			color: $primaryText;
 			margin-left: 40px;
 			margin-bottom: 20px;
 		}
@@ -42,14 +42,14 @@
 			margin-bottom: 5px;
 
 			a {
-			color: $white;
+			color: $primaryText;
 			text-decoration: none;
 			cursor: pointer;
 			font-size: 14px;
 			margin-left: 10px;
 
 				&:focus {
-					border: 1px solid $white;
+					border: 1px solid $primaryText;
 				}
 			}
 		}
@@ -107,7 +107,7 @@
 		right: 0;
 
 		span {
-			background-color: $white;
+			background-color: $primaryText;
 			position: absolute;
 			width: 25px;
 
@@ -147,14 +147,14 @@
 		text-transform: uppercase;
 		font-weight: 700;
 		font-size: 12px;
-		color: $white;
+		color: $primaryText;
 	}
 
 	span {
 		width: 25px;
 		height: 3px;
 		border-radius: 3px;
-		background-color: $lightGreen;
+		background-color: $headerContactLinkColor;
 		transition: 0.3s ease-in-out;
 
 
@@ -184,7 +184,7 @@
 }
 
 .logo {
-	color: $white;
+	color: $primaryText;
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 25px;
@@ -194,7 +194,7 @@
 
 .input-block {
 	display: flex;
-	background: $darkGrey;
+	background: $inputBackgroundColor;
 	border-radius: 10px;
 	width: 50%;
 	height: 50px;
@@ -210,14 +210,14 @@
 
 .input-search {
 	width: 100%;
-	background: $darkGrey;
+	background: $inputBackgroundColor;
 	border: 0;
 	outline: none;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 21px;
-	color: $grey;
+	color: $secondText;
 	padding-left: 2%;
 
 	&::placeholder {
@@ -225,13 +225,13 @@
 		font-weight: 400;
 		font-size: 12px;
 		line-height: 21px;
-		color: $grey;
+		color: $secondText;
 	}
 }
 
 .search-image {
 	border: 0;
-	background: $darkGrey;
+	background: $inputBackgroundColor;
 
 	cursor: pointer;
 }
@@ -250,14 +250,14 @@
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 20px;
-		color: $grey;
+		color: $secondText;
 	}
 
 	&__link {
 		width: 32px;
 		height: 32px;
 		border-radius: 50%;
-		background: $green;
+		background: $buttonColor;
 		position: relative;
 
 		margin-right: 10px;
@@ -267,7 +267,7 @@
 		background: transparent;
 		font-weight: 800;
 		text-decoration: none;
-		color: $white;
+		color: $primaryText;
 	}
 }
 
@@ -394,7 +394,7 @@
 
 		.input-search {
 			width: 100%;
-			background: $darkGrey;
+			background: $inputBackgroundColor;
 			border: 0;
 			outline: none;
 			font-style: normal;
@@ -409,7 +409,7 @@
 				font-weight: 400;
 				font-size: 18px;
 				line-height: 21px;
-				color: $grey;
+				color: $secondText;
 			}
 		}
 
@@ -423,7 +423,7 @@
 	&--opened {
 		position: absolute;
 		display: block;
-		background-color: $darkGrey;
+		background-color: $inputBackgroundColor;
 		opacity: 0.8;
 		top: 0;
 		left: 0;
