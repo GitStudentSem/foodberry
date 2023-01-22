@@ -1,18 +1,18 @@
-import './Card.scss';
+import "./Card.scss";
 
-import { BuyIcon } from '../../icons/BuyIcon';
-import skeleton  from './../../skeleton.png'
+import { BuyIcon } from "../../icons/BuyIcon";
+import skeleton from "./../../skeleton.png";
 
 interface ICard {
-    img: string;
-    name: string,
-    weight: string;
-    about: string;
-    price: number;
+	img: string;
+	name: string;
+	weight: string;
+	about: string;
+	price: number;
 }
 
-const Card = ({img, name, weight, about, price}: ICard) => {
-    return (
+const Card = ({ img, name, weight, about, price }: ICard) => {
+	return (
 		<div className="card">
 			<div className="card__image-wrapper">
 				<img
@@ -27,19 +27,16 @@ const Card = ({img, name, weight, about, price}: ICard) => {
 				/>
 			</div>
 			<div className="card__main-text">
-				<div className="card__title-container">
-					<span className="card__card-name">{name}</span>
+				<p className="card__card-name">{name}</p>
+				<p className="card__card-about">{about}</p>
+
+				<div className="card__price-container">
+					<span className="card__card-price">{price} ₽</span>
 					{weight && (
 						<span className="card__card-weight">
 							Вес: {weight} г
 						</span>
 					)}
-				</div>
-
-				<p className="card__card-about">{about}</p>
-
-				<div className="card__price-container">
-					<span className="card__card-price">{price} ₽</span>
 					<button className="card__cart-button cart">
 						В корзину <BuyIcon />
 					</button>
@@ -47,6 +44,6 @@ const Card = ({img, name, weight, about, price}: ICard) => {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Card;

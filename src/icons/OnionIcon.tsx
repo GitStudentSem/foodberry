@@ -1,4 +1,4 @@
-export const Onion = () => {
+export const OnionIcon = () => {
     return (
         <svg width="70" height="70" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_31_13)">
@@ -14,5 +14,5 @@ export const Onion = () => {
                 </clipPath>
             </defs>
         </svg>
-    )
+    );
 }

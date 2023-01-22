@@ -1,4 +1,4 @@
-export const Chef = () => {
+export const ChefIcon = () => {
     return (
         <svg width="61" height="61" viewBox="0 0 61 61" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_31_25)">
@@ -13,6 +13,5 @@ export const Chef = () => {
                 </clipPath>
             </defs>
         </svg>
-
-    )
+    );
 }

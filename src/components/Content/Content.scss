@@ -2,6 +2,7 @@
 @import "../../globalStyles/mixins.scss";
 
 .main-content {
+	background: $menuNavBarBackground;
 
 	&__container {
 		@include container;
@@ -16,4 +17,19 @@
 		max-width: 1440px;
 		overflow: hidden;
 	}
+
+	&__slider {
+		height: 100%;
+	}
+}
+
+.menu-title {
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 39px;
+	/* identical to box height */
+
+	text-transform: uppercase;
+
+	coloR: $primaryText;
 }
