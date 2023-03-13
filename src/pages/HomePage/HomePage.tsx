@@ -17,9 +17,9 @@ const HomePage = () => {
 			<NavBar
 				activeSection={activeSection}
 			/>
-			{/* <Content
+			<Content
 				setActiveSection={setActiveSection}
-			/> */}
+			/>
 			<div className="wrapper-contactsMap">
 				<ContactsMap />
 				<Map classNames="map" />

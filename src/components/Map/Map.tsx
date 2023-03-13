@@ -1,5 +1,5 @@
 
-import { MapContainer, TileLayer, useMap, Marker, Popup, useMapEvents } from 'react-leaflet';
+import { MapContainer, TileLayer, useMap, Marker, Popup, useMapEvents, VideoOverlay } from 'react-leaflet';
 import { useState } from 'react';
 import 'leaflet-css';
 import "./Map.scss";
@@ -27,9 +27,7 @@ import marker7 from '../../images/map/marker7.svg';
 import marker8 from '../../images/map/marker8.svg';
 import markerMain from '../../images/map/markerMain.svg';
 
-
-
-
+import { GeoJSON } from 'react-leaflet';
 
 let arrFoods = [
 	marker1,
@@ -56,6 +54,8 @@ interface IClass {
 const Map = ({ classNames }: IClass) => {
 	const position: number[] = [55.752220, 37.615560];
 
+
+
 	const iconPerson: any = new L.Icon({
 		iconUrl: markerMain,
 		iconRetinaUrl: markerMain,
@@ -67,11 +67,10 @@ const Map = ({ classNames }: IClass) => {
 		<div className={classNames}>
 			<div className="map-wrapper">
 				<MapContainer center={[55.748706, 37.580544]} zoom={20} scrollWheelZoom={true} className='map-container' >
-
 					{
-						database.map((obj) => {
+						database.map((obj, index) => {
 							return (
-								<div>
+								<div key={index + 'adasd'}>
 									{/* <TileLayer
 										url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 										attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -80,6 +79,7 @@ const Map = ({ classNames }: IClass) => {
 										url="https://maps.geoapify.com/v1/tile/dark-matter/{z}/{x}/{y}.png?apiKey=816d9af48505427a93d64e888a9c4a8d"
 										attribution='Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | <a href="https://openmaptiles.org/" target="_blank">© OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap</a> contributors'
 									/>
+
 									<Marker position={obj.restaurant.coordinats} icon={iconPerson}>
 										<div className="popup">
 											<Popup>
@@ -88,7 +88,7 @@ const Map = ({ classNames }: IClass) => {
 													slidesPerView={1} className="gallery-images">{
 														obj.restaurant.images?.map((images, index) => {
 															return (
-																<SwiperSlide key={index} className="map-galleryPopup-wrapper">
+																<SwiperSlide key={index+images} className="map-galleryPopup-wrapper">
 																	<img src={images} alt="gallery" />
 																</SwiperSlide>
 															)
@@ -104,7 +104,7 @@ const Map = ({ classNames }: IClass) => {
 												<div>
 													{
 														obj.restaurant.feedBack.map((feedBack, index) => {
-															return <div key={index}>{
+															return <div key={index + 'adnd'}>{
 																<>
 																	<div className="avatar">
 																		<div className="avatar-image">
@@ -119,7 +119,6 @@ const Map = ({ classNames }: IClass) => {
 																		<span style={{ marginRight: '10px', color: 'lightgray' }}>{feedBack.user.date}</span>
 																	</div>
 																	<div><SvgRating num={feedBack.user.rating} /></div><br />
-																	{console.log(feedBack.user.rating)}
 																	<p className="avatar-message">
 																		{feedBack.user.message}
 																	</p>

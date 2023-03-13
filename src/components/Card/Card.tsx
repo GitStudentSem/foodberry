@@ -3,6 +3,7 @@ import "./Card.scss";
 import { BuyIcon } from "../../icons/BuyIcon";
 import skeleton from "./../../skeleton.png";
 import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface ICard {
 	img: string;
@@ -30,15 +31,16 @@ const Card = ({ img, name, weight, about, price }: ICard) => {
 	return (
 		<div className="card">
 			<div className="card__image-wrapper">
-				<img
+				<LazyLoadImage
 					src={img}
-					alt={name}
+					effect="blur"
 					className="card__image"
 					onError={(
 						event: React.SyntheticEvent<HTMLImageElement, Event>
 					) => {
 						event.currentTarget.src = skeleton;
 					}}
+					alt={name}
 				/>
 			</div>
 			<div className="card__main-text">
