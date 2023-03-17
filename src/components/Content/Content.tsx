@@ -69,6 +69,7 @@ const Content = ({ setActiveSection }: IActiveSection) => {
 												weight={dish.weight}
 												price={dish.price}
 												about={dish.about}
+												id={index}
 											/>
 										</SwiperSlide>
 									);

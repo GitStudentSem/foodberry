@@ -17,8 +17,6 @@ import RulesOfDelivery from "./pages/RulesOfDelivery/RulesOfDelivery";
 
 function App() {
 
-	localStorage.setItem('cart', '[]');
-
 	return (
 		<div className="wrapper">
 			<Header />

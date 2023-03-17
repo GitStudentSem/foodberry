@@ -11,9 +11,10 @@ interface ICard {
 	weight: string;
 	about: string;
 	price: number;
+	id: number;
 }
 
-const Card = ({ img, name, weight, about, price }: ICard) => {
+const Card = ({ img, name, weight, about, price, id }: ICard) => {
 	const [buttonsShow, setButtonsShow] = useState(false);
 
 	let orders = JSON.parse(localStorage.getItem("cart") || "");
@@ -21,10 +22,14 @@ const Card = ({ img, name, weight, about, price }: ICard) => {
 	const addOrderToStorage = () => {
 		orders.push({ img, name, weight, about, price });
 		localStorage.setItem("cart", JSON.stringify(orders));
+		console.log(orders.length);		
 	};
 
-	const deleteOrderFromStorage = () => {
+	const deleteOrderFromStorage = (id) => {
+		// orders.filter(order => order.id !== id);
 		orders.pop();
+		console.log(orders);
+		
 		localStorage.setItem("cart", JSON.stringify(orders));
 	};
 
@@ -50,7 +55,7 @@ const Card = ({ img, name, weight, about, price }: ICard) => {
 					<div className="card__price-container">
 						<button
 							className="card__cart-add-btn cart"
-							onClick={deleteOrderFromStorage}
+							onClick={() => deleteOrderFromStorage(id)}
 						>
 							-
 						</button>
