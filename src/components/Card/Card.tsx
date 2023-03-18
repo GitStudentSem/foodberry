@@ -6,7 +6,9 @@ import skeleton from "./../../skeleton.png";
 import { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-interface ICard {
+import { IOrders } from "AppRouter";
+
+export interface ICard {
 	img: string;
 	name: string;
 	weight: string;
@@ -15,23 +17,32 @@ interface ICard {
 	id: number;
 }
 
-const Card = ({ img, name, weight, about, price, id }: ICard) => {
+const Card = ({
+	img,
+	name,
+	weight,
+	about,
+	price,
+	id,
+	orders,
+	setOrders,
+}: ICard & IOrders) => {
 	const [buttonsShow, setButtonsShow] = useState(false);
 
-	let orders = JSON.parse(localStorage.getItem("cart") || "");
+	// let orders = JSON.parse(localStorage.getItem("cart") || "");
 
-	const addOrderToStorage = () => {
-		orders.push({ img, name, weight, about, price });
-		localStorage.setItem("cart", JSON.stringify(orders));
-	};
+	// const addOrderToStorage = () => {
+	// 	orders.push({ img, name, weight, about, price });
+	// 	localStorage.setItem("cart", JSON.stringify(orders));
+	// };
 
-	const deleteOrderFromStorage = (id) => {
-		orders.filter((order) => order.id !== id);
-		orders.pop();
-		console.log(orders);
+	// const deleteOrderFromStorage = (id) => {
+	// 	orders.filter((order) => order.id !== id);
+	// 	orders.pop();
+	// 	console.log(orders);
 
-		localStorage.setItem("cart", JSON.stringify(orders));
-	};
+	// 	localStorage.setItem("cart", JSON.stringify(orders));
+	// };
 
 	return (
 		<div className="card">
@@ -55,7 +66,18 @@ const Card = ({ img, name, weight, about, price, id }: ICard) => {
 					<div className="card__price-container">
 						<button
 							className="card__cart-add-btn cart"
-							onClick={() => deleteOrderFromStorage(id)}
+							onClick={() => {
+								const prevOrders = [...orders];
+								prevOrders.push({
+									img,
+									name,
+									weight,
+									about,
+									price,
+									id,
+								});
+								setOrders(prevOrders);
+							}}
 						>
 							-
 						</button>
@@ -63,7 +85,19 @@ const Card = ({ img, name, weight, about, price, id }: ICard) => {
 						<span className="card__card-weight">{weight} г</span>
 						<button
 							className="card__cart-add-btn cart"
-							onClick={addOrderToStorage}
+							onClick={() => {
+								console.log(orders);
+								const prevOrders = [...orders];
+								prevOrders.push({
+									img,
+									name,
+									weight,
+									about,
+									price,
+									id,
+								});
+								setOrders(prevOrders);
+							}}
 						>
 							+
 						</button>

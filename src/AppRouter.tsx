@@ -8,12 +8,21 @@ import CartPage from "pages/CartPage/CartPage";
 import ProductPage from "pages/ProductPage/ProductPage";
 import PolicyPage from "pages/Policy/Policy";
 import NotFoundPage from "pages/NotFoundPage";
+import { ICard } from "components/Card/Card";
 
-export default function AppRouter() {
+export interface IOrders {
+	orders: ICard[];
+	setOrders: any;
+}
+
+export default function AppRouter({ orders, setOrders }: IOrders) {
 	return (
 		<>
 			<Routes>
-				<Route path="/" element={<HomePage />} />
+				<Route
+					path="/"
+					element={<HomePage orders={orders} setOrders={setOrders} />}
+				/>
 				<Route path="/checkout" element={<CheckoutPage />} />
 				<Route path="/rulesofdelivery" element={<RulesOfDelivery />} />
 				<Route path="/promotions" element={<Promotions />} />

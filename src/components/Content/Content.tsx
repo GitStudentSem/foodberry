@@ -7,15 +7,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { InView } from "react-intersection-observer";
 
-
-import Card from "../Card/Card";
+import Card, { ICard } from "../Card/Card";
 import Benefits from "../Benefits/Benefits";
+
+import { IOrders } from "AppRouter";
 
 interface IActiveSection {
 	setActiveSection: (item: string) => void;
 }
 
-const Content = ({ setActiveSection }: IActiveSection) => {
+const Content = ({
+	setActiveSection,
+	orders,
+	setOrders,
+}: IActiveSection & IOrders) => {
 	return (
 		<section className="main-content">
 			<div className="main-content__container">
@@ -27,7 +32,7 @@ const Content = ({ setActiveSection }: IActiveSection) => {
 							className="main-content__content"
 							as="div"
 							threshold={1}
-							onChange={inView =>
+							onChange={(inView) =>
 								inView && setActiveSection(item.id)
 							}
 						>
@@ -61,7 +66,7 @@ const Content = ({ setActiveSection }: IActiveSection) => {
 									return (
 										<SwiperSlide
 											key={index}
-											className='swiper-slide'
+											className="swiper-slide"
 										>
 											<Card
 												img={dish.img}
@@ -70,6 +75,8 @@ const Content = ({ setActiveSection }: IActiveSection) => {
 												price={dish.price}
 												about={dish.about}
 												id={index}
+												orders={orders}
+												setOrders={setOrders}
 											/>
 										</SwiperSlide>
 									);

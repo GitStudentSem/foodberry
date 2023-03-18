@@ -11,15 +11,20 @@ import Cart from "../../components/Cart/Cart";
 import { food } from "../../dataBase";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
+import { ICard } from "components/Card/Card";
 
-const Header = () => {
+interface IHeader {
+	orders: ICard[];
+}
+
+const Header = ({ orders }: IHeader) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const zIndexHeader = {
-		zIndex: 11
+		zIndex: 11,
 	};
 
 	return (
-		<header className="header" style={isOpen ? zIndexHeader : {} }>
+		<header className="header" style={isOpen ? zIndexHeader : {}}>
 			<div className="header__container">
 				<div
 					className={`overlay overlay--${
@@ -32,7 +37,7 @@ const Header = () => {
 				<button
 					className={`burger-wrapper burger-wrapper--${
 						isOpen ? "opened" : "closed"
-						}`}
+					}`}
 					type="button"
 					onClick={() => {
 						setIsOpen(!isOpen);
@@ -111,7 +116,7 @@ const Header = () => {
 						</a>
 					</div>
 				</div>
-				<Cart />
+				<Cart orders={orders} />
 			</div>
 		</header>
 	);
