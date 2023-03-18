@@ -8,32 +8,34 @@ import OfferCard from "../../components/CartPage/OfferCard/OfferCard";
 import { food } from "../../dataBase";
 
 const CartPage = () => {
+	const renderOrders = () => {
+		let orders: {
+			img: string;
+			name: string;
+			weight: string;
+			about: string;
+			price: number;
+		}[] = JSON.parse(localStorage.getItem("cart") || "");
 
-		const renderOrders = () => {
-			let orders: {
-				img: string;
-				name: string;
-				weight: string;
-				about: string;
-				price: number;
-			}[] = JSON.parse(localStorage.getItem("cart") || '');
-
-			return orders.length >= 1 ? (
-				orders.map((item, index) =>
-					<Order
-						img={item.name}
-						name={item.name}
-						weight={item.weight}
-						about={item.about}
-						price={item.price}
-						key={index}
-					/>)
-			) : <h1>Вы не добавляли товаров в корзину</h1>
-		}
+		return orders.length >= 1 ? (
+			orders.map((item, index) => (
+				<Order
+					img={item.name}
+					name={item.name}
+					weight={item.weight}
+					about={item.about}
+					price={item.price}
+					key={index}
+				/>
+			))
+		) : (
+			<h1>Вы не добавляли товаров в корзину</h1>
+		);
+	};
 
 	const getRandomInt = (max: number) => {
 		return Math.floor(Math.random() * max);
-	}
+	};
 
 	let dishArray: any[] = [];
 
@@ -42,31 +44,27 @@ const CartPage = () => {
 		dishArray.push(food[index]);
 		dishArray = dishArray.filter((v, i, arr) => arr.indexOf(v) == i);
 
-		break
+		break;
 	}
 
 	const renderDishes = () => {
-
 		return dishArray.map((item, index) => {
 			return (
 				<div className="dish-offers__wrapper" key={index}>
-					{
-						item.foods.map((dish: any, index: number) => {
-							return (
-								<OfferCard
-									name={dish.name}
-									price={dish.price}
-									img={dish.img}
-									key={index}
-								/>
-							)
-						})
-					}
+					{item.foods.map((dish: any, index: number) => {
+						return (
+							<OfferCard
+								name={dish.name}
+								price={dish.price}
+								img={dish.img}
+								key={index}
+							/>
+						);
+					})}
 				</div>
-			)
-
-		})
-	}
+			);
+		});
+	};
 
 	return (
 		<div className="cart-page">
@@ -86,9 +84,7 @@ const CartPage = () => {
 				</div>
 
 				<div className="orders">
-					<div className="orders__wrapper">
-						{renderOrders()}
-					</div>
+					<div className="orders__wrapper">{renderOrders()}</div>
 				</div>
 
 				<div className="dish-offers">
@@ -116,7 +112,7 @@ const CartPage = () => {
 								Минимальная сумма заказа 1500 ₽
 							</p>
 						</div>
-						<Link to='/checkout' className="place-order__place-btn">
+						<Link to="/checkout" className="place-order__place-btn">
 							Оформить заказ
 						</Link>
 					</div>

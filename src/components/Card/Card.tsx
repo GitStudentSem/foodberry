@@ -2,6 +2,7 @@ import "./Card.scss";
 
 import { BuyIcon } from "../../icons/BuyIcon";
 import skeleton from "./../../skeleton.png";
+
 import { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -22,14 +23,13 @@ const Card = ({ img, name, weight, about, price, id }: ICard) => {
 	const addOrderToStorage = () => {
 		orders.push({ img, name, weight, about, price });
 		localStorage.setItem("cart", JSON.stringify(orders));
-		console.log(orders.length);		
 	};
 
 	const deleteOrderFromStorage = (id) => {
-		// orders.filter(order => order.id !== id);
+		orders.filter((order) => order.id !== id);
 		orders.pop();
 		console.log(orders);
-		
+
 		localStorage.setItem("cart", JSON.stringify(orders));
 	};
 
@@ -90,4 +90,3 @@ const Card = ({ img, name, weight, about, price, id }: ICard) => {
 };
 
 export default Card;
-

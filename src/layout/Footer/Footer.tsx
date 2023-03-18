@@ -33,7 +33,7 @@ const Footer = () => {
 							</a>
 							<a href='mailto:chernigovsky108@gmail.com' className="footer__email">
 								<span>Рамиль frontend-developer:</span>
-								<p>chernigovsky108@gmail.com</p>
+								<p>osmanovramil823@gmail.com</p>
 							</a>
 							<a href='mailto:chernigovsky108@gmail.com' className="footer__email">
 								<span>Семён team leader:</span>
