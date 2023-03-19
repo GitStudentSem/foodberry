@@ -14,10 +14,9 @@ function App() {
 	}
 
 	const [orders, setOrders] = useState<ICard[]>([]);
-	console.log(orders);
 
 	useEffect(() => {
-		localStorage.setItem('cart', JSON.stringify(orders));
+		setOrders(JSON.parse(localStorage.getItem('cart') || ''));
 	}, [orders])
 
 	return (

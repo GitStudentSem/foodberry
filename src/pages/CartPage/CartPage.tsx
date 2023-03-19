@@ -78,7 +78,7 @@ const CartPage = () => {
 						<span className="title-line"></span>
 						<span className="orders-amount__path">Корзина</span>
 						<span className="orders-counter">
-							(в корзине n товаров)
+							(в корзине {JSON.parse(localStorage.getItem('cart') || '').length} товаров)
 						</span>
 					</div>
 				</div>

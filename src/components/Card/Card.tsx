@@ -97,6 +97,11 @@ const Card = ({
 									id,
 								});
 								setOrders(prevOrders);
+								alert(`${name} добавлено в корзину`);
+								localStorage.setItem(
+									"cart",
+									JSON.stringify(prevOrders)
+								);
 							}}
 						>
 							+
