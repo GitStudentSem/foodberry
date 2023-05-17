@@ -8,7 +8,7 @@ import CartPage from "pages/CartPage/CartPage";
 import ProductPage from "pages/ProductPage/ProductPage";
 import PolicyPage from "pages/Policy/Policy";
 import NotFoundPage from "pages/NotFoundPage";
-import { ICard } from "components/Card/Card";
+import { ICard } from "components/screens/main/Card/Card";
 
 export interface IOrders {
 	orders: ICard[];

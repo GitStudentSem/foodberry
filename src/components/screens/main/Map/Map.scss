@@ -1,0 +1,112 @@
+@import "../../../../globalStyles/variables";
+@import "../../../../globalStyles/mixins";
+
+.map {
+	height: 665px;
+    min-width: 100%;
+    background-color: $inputSearchColor;
+}
+
+.map-wrapper {
+	min-height: initial;
+	min-width: none;
+	height: inherit;
+}
+
+.map-container {
+	min-height: 100%;
+	min-width: 100%;
+}
+
+.gallery-images {
+	height: 200px;
+}
+
+.map-galleryPopup-wrapper {
+	height: 200px;
+
+	img {
+		height: 100%;
+	}
+}
+
+.leaflet-popup-content-wrapper {
+	height: 60vh;
+	overflow-y: scroll;
+	transition: 1s ease-in-out;
+	width: 330px;
+
+	&:hover {
+
+			width: 550px;
+			transition: 1s ease-in-out;
+
+		* > div,p,span,a, .swiper-slide {
+			width: 500px;
+			transition: 1s ease-in-out;
+		}
+
+		div.leaflet-popup-content {
+			width: 550px;
+			transition: 1s ease-in-out;
+		}
+
+		.swiper-slide {
+			height: 400px;
+		}
+
+		.gallery-images{
+			height: 400px;
+		}
+
+		.avatar-image {
+			border-radius: 50%;
+			height: 50px;
+			width: 50px;
+			overflow: hidden;
+
+			img {
+				height: 100px;
+				width: 100px;
+				object-fit: contain;
+				margin-top: -25px;
+				margin-left: -21px;
+			}
+		}
+	}
+}
+
+.avatar-image {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	overflow: hidden;
+
+	img {
+		height: 100px;
+		width: 100px;
+		object-fit: contain;
+		margin-top: -25px;
+		margin-left: -21px;
+	}
+}
+
+.avatar-message {
+	padding: 10px 10px 10px 20px;
+	background-color: lightblue;
+	border-radius: 15px;
+
+	span {
+		text-align: right;
+	}
+}
+
+.leaflet-top {
+	top: auto !important;
+	bottom: 10px !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+	z-index: 2 !important;
+}

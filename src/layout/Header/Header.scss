@@ -48,11 +48,11 @@
 			margin-bottom: 5px;
 
 			a {
-			color: $primaryText;
-			text-decoration: none;
-			cursor: pointer;
-			font-size: 14px;
-			margin-left: 10px;
+				color: $primaryText;
+				text-decoration: none;
+				cursor: pointer;
+				font-size: 14px;
+				margin-left: 10px;
 
 				&:focus {
 					border: 1px solid $primaryText;
@@ -94,8 +94,8 @@
 
 .burger-wrapper {
 	display: grid;
-    width: 50px;
-    height: 40px;
+	width: 50px;
+	height: 40px;
 	justify-items: center;
 	background: transparent;
 	outline: none;
@@ -153,7 +153,7 @@
 	align-items: center;
 	margin-bottom: 10px;
 	top: 4px;
-    left: 2px;
+	left: 2px;
 	padding-right: 4px;
 
 	&__text {
@@ -351,7 +351,7 @@
 			display: flex;
 		}
 
-		&__logo  {
+		&__logo {
 			order: 1;
 		}
 
@@ -393,11 +393,13 @@
 			margin: 0 auto 0 0;
 			padding-right: 10px;
 		}
+
 		.input-block {
 			order: 2;
 			margin: 0 10px 0 0;
 			flex-basis: 100%;
 		}
+
 		button {
 			&:hover {
 				cursor: pointer;
@@ -441,5 +443,101 @@
 
 	&--closed {
 		display: none;
+	}
+}
+
+.cart {
+	background: linear-gradient(114.93deg, #618967 5.11%, #72a479 94%);
+	border: 0;
+	border-radius: 10px;
+	cursor: pointer;
+	text-decoration: none;
+
+	&__counter-block {
+		display: flex;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background: #fff;
+	}
+
+	&__counter {
+		margin: auto;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 14px;
+		color: #403c3b;
+	}
+
+	&__text {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 17px;
+		color: #fff;
+	}
+}
+
+@media screen and (min-width: 320px) {
+	//mobile
+	.cart {
+		position: relative;
+
+		.buyIcon {
+			display: block;
+		}
+
+		&__text {
+			border-top: 1px solid rgba(255, 255, 255, 0.3);
+			padding: 0;
+			font-size: 12px;
+			text-transform: lowercase;
+		}
+
+		&__counter-block {
+			display: flex;
+			position: absolute;
+			top: -10px;
+			right: -10px;
+			width: 24px;
+			height: 24px;
+			border-radius: 50%;
+			background: #fff;
+		}
+
+		&__counter {
+			margin: auto;
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 14px;
+			color: #403c3b;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	//tablet
+	.cart {
+		.buyIcon {
+			display: none;
+		}
+
+		&__text {
+			border-right: 1px solid rgba(255, 255, 255, 0.3);
+			padding: 10px 20px 10px 17px;
+			text-transform: none;
+			border-top: none;
+			font-size: 14px;
+		}
+
+		&__counter-block {
+			display: flex;
+			position: static;
+			border-radius: 50%;
+			margin-left: 12px;
+		}
+
+		&__counter {
+			position: static;
+		}
 	}
 }

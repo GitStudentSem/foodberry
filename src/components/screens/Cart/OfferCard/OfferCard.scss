@@ -1,0 +1,107 @@
+@import "../../../../globalStyles/variables";
+
+@media screen and (min-width: $phone-sm) {
+	.offer-card {
+		padding: 20px 10px;
+		border-bottom: 1px solid grey;
+
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&__image {
+			border-radius: 10px;
+			width: 111px;
+			height: 82px;
+		}
+
+		&__title {
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 19px;
+
+			color: $primaryText;
+		}
+
+		&__subtitle {
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 14px;
+
+			color: #c6ced1;
+		}
+
+		&__main-text {
+			display: block;
+			text-align: left;
+			margin-left: 10px;
+		}
+
+		&__add-block {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 140px;
+		}
+	}
+}
+
+@media screen and (min-width: $phone-md) {
+	.offer-card {
+		padding: 20px;
+	}
+}
+
+@media screen and (min-width: $tablet) {
+	.offer-card {
+		&__wrapper {
+			justify-content: left;
+		}
+
+		&__title {
+			font-size: 20px;
+		}
+
+		&__add-block {
+			width: 200px;
+		}
+	}
+}
+
+@media screen and (min-width: $desktop) {
+	.offer-card {
+		// width: 273px;
+
+		&__wrapper {
+			display: block;
+			padding: 20px 0;
+		}
+
+		&__image {
+			width: 210px;
+			height: 123px;
+		}
+
+		&__title {
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 17px;
+		}
+		&__add-block {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.order-block__btn {
+		width: 23px;
+		height: 23px;
+
+		font-size: 10px;
+
+		cursor: pointer;
+		transition: 0.3s;
+	}
+}

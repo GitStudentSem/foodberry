@@ -1,0 +1,67 @@
+@import "../../../../globalStyles/variables";
+@import "../../../../globalStyles/mixins";
+
+.main-content {
+	background: $menuNavBarBackground;
+	padding-top: 50px;
+
+	&__container {
+		@include container;
+		display: grid;
+		align-items: flex-start;
+		justify-content: flex-start;
+		padding: 20px 0;
+	}
+
+	&__content {
+		height: 500px;
+		overflow: hidden;
+	}
+
+	&__slider {
+		height: 100%;
+		width: auto;
+		margin: -20px;
+	}
+}
+
+.menu-title {
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 39px;
+	text-transform: uppercase;
+	color: $primaryText;
+
+	display: flex;
+
+	margin-bottom: 20px;
+	padding: 10px;
+
+	&__line {
+		background: $scrollNavBar;
+		width: 4px;
+		margin-right: 20px;
+	}
+}
+
+// .swiper-slide {
+// 	width: 320px !important;
+// 	margin-right: 20px !important;
+// 	height: 400px !important;
+// }
+
+.swiper-slide {
+	margin: 0 auto;
+}
+
+@media screen and (max-width: $tablet) {
+	.main-content {
+		padding: 0;
+	}
+}
+
+@media screen and (min-width: 2560px) {
+	.swiper-slide {
+		margin-right: 40px !important;
+	}
+}

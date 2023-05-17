@@ -1,0 +1,70 @@
+@import "../../../../globalStyles/variables";
+@import "../../../../globalStyles/mixins";
+
+.credit-card {
+	max-width: 390px;
+	margin: 0 auto;
+
+	&__name {
+		display: grid;
+
+		input {
+			min-width: 100%;
+		}
+	}
+
+	&__input {
+		display: grid;
+		gap: 20px;
+		margin-bottom: 20px;
+	}
+
+	&__dates {
+		display: flex;
+		justify-content: space-between;
+		gap: 5px;
+
+		.credit-card__input {
+			input {
+				min-width: 80px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $phone-lg) {
+	.credit-card {
+		max-width: 390px;
+		margin: 0 auto;
+
+		&__name {
+			display: flex;
+			justify-content: space-between;
+
+			input {
+				min-width: 100%;
+			}
+		}
+
+		&__dates {
+			display: flex;
+			justify-content: space-between;
+			gap: 5px;
+
+			.credit-card__input {
+				input {
+					min-width: 100px;
+					max-width: max-content;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $tablet) {
+
+}
+
+@media screen and (min-width: $desktop) {
+
+}

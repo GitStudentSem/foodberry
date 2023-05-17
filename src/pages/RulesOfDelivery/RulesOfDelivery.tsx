@@ -1,8 +1,9 @@
 import "./RulesOfDelivery.scss";
 
-import Map from "../../components/Map/Map";
-import { useState } from "react";
+import Map from "../../components/screens/main/Map/Map";
+import {useState} from "react";
 import Arrow from "./Arrow";
+import data from "./data";
 
 const RulesOfDelivery = () => {
 	const [isAnswer, setIsAnswer] = useState('RulesOfDelivery__question-main RulesOfDelivery__question--open');
@@ -12,8 +13,8 @@ const RulesOfDelivery = () => {
 		question: {
 			title: string;
 			subtitle: string;
-	}}[] = [
-
+		}
+	}[] = [
 		{
 			question: {
 				title: "У наших курьеров всегда должна быть сдача!",
@@ -60,18 +61,22 @@ const RulesOfDelivery = () => {
 					<div className="RulesOfDelivery__faqMap">
 						<div className="RulesOfDelivery__questions">
 							{
-								dataBaseQuestions.map((question, index) => {
+								data.map((question, index) => {
 									return (
 										<>
 											<div
 												className="RulesOfDelivery__question"
 												key={index}
 											>
-												<div className="RulesOfDelivery__question-main" onClick={(e) => { e.currentTarget.className = isAnswer }} onDoubleClick={(e) => { e.currentTarget.className = 'RulesOfDelivery__question-main' }}>
+												<div className="RulesOfDelivery__question-main" onClick={(e) => {
+													e.currentTarget.className = isAnswer
+												}} onDoubleClick={(e) => {
+													e.currentTarget.className = 'RulesOfDelivery__question-main'
+												}}>
 													<p className="RulesOfDelivery__question-first">
 														{question.question.title}
 													</p>
-													<Arrow isArrow={isArrow} />
+													<Arrow isArrow={isArrow}/>
 												</div>
 												<p className={`RulesOfDelivery__answer`}>
 													{question.question.subtitle}
@@ -83,9 +88,8 @@ const RulesOfDelivery = () => {
 							}
 
 
-
 						</div>
-						<Map classNames="map RulesOfDelivery__map" />
+						<Map classNames="map RulesOfDelivery__map"/>
 					</div>
 
 					<div className="RulesOfDelivery__timesWork">

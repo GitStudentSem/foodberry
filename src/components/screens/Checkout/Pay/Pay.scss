@@ -1,0 +1,61 @@
+@import "../../../../globalStyles/variables";
+@import "../../../../globalStyles/mixins";
+
+.Pay {
+	background: $cardBackground;
+	padding: 30px 25px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+
+	&__subtitle {
+		font-weight: 600;
+		margin-bottom: 30px;
+	}
+
+	.form-pay-result {
+		padding: 10px 10px;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 10px;
+		color: $primaryText;
+		min-height: 60px;
+		display: none;
+		align-items: center;
+		max-width: 173px;
+		position: relative;
+
+		&.block {
+			display: flex;
+		}
+
+		&::after {
+			@include pseudo;
+			content: 'P';
+			right: 10px;
+		}
+	}
+
+	.toggle-pay {
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+
+		&__span {
+			white-space: nowrap;
+			min-width: 30%;
+			min-height: 60px;
+			position: relative;
+
+			&:first-of-type {
+				border-radius: 0px 10px 10px 0px;
+			}
+
+			&:nth-of-type(2) {
+				border-radius: 0px 0px 0px 0px;
+				border-left: 0;
+			}
+
+			&:last-of-type {
+				border-radius: 10px 0px 0px 10px;
+			}
+		}
+	}
+}

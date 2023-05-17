@@ -1,23 +1,23 @@
 import "./Header.scss";
 
-import { LocationIcon } from "../../icons/LocationIcon";
-import { CallingIcon } from "../../icons/CallingIcon";
-import { SearchIcon } from "../../icons/SearchIcon";
-import { FoodDeliciousIcon } from "../../icons/FoodDeliciousIcon";
+import {LocationIcon} from "../../icons/LocationIcon";
+import {CallingIcon} from "../../icons/CallingIcon";
+import {SearchIcon} from "../../icons/SearchIcon";
+import {FoodDeliciousIcon} from "../../icons/FoodDeliciousIcon";
 
-import { useState } from "react";
+import {useState} from "react";
 
-import Cart from "../../components/Cart/Cart";
-import { food } from "../../dataBase";
-import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom";
-import { ICard } from "components/Card/Card";
+import {food} from "../../dataBase";
+import {HashLink} from "react-router-hash-link";
+import {Link} from "react-router-dom";
+import {ICard} from "components/screens/main/Card/Card";
+import {BuyIcon} from "../../icons/BuyIcon";
 
 interface IHeader {
 	orders: ICard[];
 }
 
-const Header = ({ orders }: IHeader) => {
+const Header = ({orders}: IHeader) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const zIndexHeader = {
 		zIndex: 11,
@@ -63,7 +63,7 @@ const Header = ({ orders }: IHeader) => {
 									className={"nav__item"}
 									key={index + item.menuTitle}
 								>
-									<FoodDeliciousIcon />
+									<FoodDeliciousIcon/>
 									<HashLink
 										to={"#" + item.id}
 										onClick={() => {
@@ -85,7 +85,7 @@ const Header = ({ orders }: IHeader) => {
 				<div className="input-block header__input-block">
 					<form className="input-block__form">
 						<div className="input-block__decoration-image header__decoration-image">
-							<LocationIcon />
+							<LocationIcon/>
 						</div>
 						<input
 							type="search"
@@ -96,18 +96,18 @@ const Header = ({ orders }: IHeader) => {
 							type="submit"
 							className="search-image header__search-image"
 						>
-							<SearchIcon />
+							<SearchIcon/>
 						</button>
 					</form>
 				</div>
 
 				<div className="contacts header__contacts">
 					<a href="tel:+79175105759" className="contacts__link">
-						<CallingIcon />
+						<CallingIcon/>
 					</a>
 					<div className="contacts__info header__contacts-info">
 						<span className="contacts__text">Контакты:</span>
-						<br />
+						<br/>
 						<a
 							href="tel:+79175105759"
 							className="contacts__link link"
@@ -116,7 +116,15 @@ const Header = ({ orders }: IHeader) => {
 						</a>
 					</div>
 				</div>
-				<Cart orders={orders} />
+				<Link to="/cart" className="cart header__cart">
+			<span className="buyIcon">
+				<BuyIcon/>
+			</span>
+					<span className="cart__text ">Корзина</span>
+					<span className="cart__counter-block">
+				<span className="cart__counter">{orders.length}</span>
+			</span>
+				</Link>
 			</div>
 		</header>
 	);

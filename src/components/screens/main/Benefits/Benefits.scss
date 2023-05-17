@@ -1,0 +1,321 @@
+@import "../../../../globalStyles/variables";
+@import "../../../../globalStyles/mixins";
+
+.benefits {
+    display: flex;
+    background: transparent;
+    align-items: center;
+    min-height: 375px;
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+        position: relative;
+        z-index: 1;
+        padding: 10px 10px;
+        display: flex;
+        background: $headerBackground;
+        background-image: url("../../../../images/curiza.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+        min-height: auto;
+    }
+
+    &__overflow {
+        @include pseudo;
+        min-width: 100%;
+        min-height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background: linear-gradient(90deg, rgba(33, 31, 32, 1) 30%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &__descriptions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        min-height: 100%;
+    }
+
+    .wrapper {
+        min-height: 100%;
+        width: 100%;
+    }
+
+    .description-block__button {
+        width: 183px;
+        height: 39px;
+        background: rgba(255, 255, 255, 0.05);
+        color: $primaryText;
+        border: 0;
+        backdrop-filter: blur(2.5px);
+        border-radius: 10px;
+        text-transform: uppercase;
+        padding-right: 15px;
+        padding-left: 44px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 16px;
+        cursor: pointer;
+        transition: all 1s ease;
+    }
+
+    .description-block__button:hover {
+        box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
+        transition: all 1s ease;
+        color: $tileTextColor;
+    }
+
+    .description-block {
+        color: $primaryText;
+        font-family: "Ubuntu-Light";
+        z-index: 3;
+        min-width: 75%;
+        top: 0;
+        left: 0;
+        display: none;
+
+        &__title {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 39px;
+            margin-top: 26px;
+            margin-bottom: 26px;
+        }
+
+        &__subtitle {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__buttons {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(4, 71px);
+        grid-template-rows: repeat(1, 71px);
+        z-index: 2;
+        top: 10px;
+        right: 0;
+        margin: 0;
+        width: 100%;
+
+        &>* {
+            background: rgba(80, 75, 74, 0.9);
+            backdrop-filter: blur(5px);
+            border: 0;
+            cursor: pointer;
+        }
+    }
+
+
+    &__button {
+        display: grid;
+        flex-direction: column-reverse;
+        align-content: center;
+        justify-items: center;
+        width: 100%;
+        height: auto;
+        transition: all 1s ease;
+        font-family: "Ubuntu-Light";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: $primaryText;
+
+        svg {
+            transition: all 1s ease;
+            fill: $primaryText;
+            width: 30px;
+            height: 30px;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
+
+    .description-block.active {
+        display: block;
+    }
+
+    &__button:focus{
+        box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
+        transition: all 1s ease;
+        color: $tileTextColor;
+
+        svg {
+            fill: $tileTextColor;
+            transition: all 1s ease;
+        }
+    }
+
+    &__button:hover {
+        box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.4);
+        transition: all 1s ease;
+        color: $tileTextColor;
+
+        svg {
+            transition: all 1s ease;
+            fill: $tileTextColor;
+        }
+    }
+}
+
+@media screen and (min-width: $phone-md) {
+    .benefits {
+        &__buttons {
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+}
+
+@media screen and (min-width: 560px) {
+    .benefits__container {
+        background-size: cover;
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .benefits {
+        height: 360px;
+
+        &__container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            min-width: 320px;
+            height: 460px;
+            margin: 0 30px;
+            padding: 0 20px;
+            background-size: contain;
+            background-position: right;
+            bottom: -100px;
+        }
+
+        .descriptions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+            left: 0;
+            z-index: 4;
+            min-height: 100%;
+        }
+
+        .wrapper {
+            min-height: 100%;
+            min-width: 50%;
+        }
+
+        .description-block.active {
+            display: block;
+        }
+
+        .description-block {
+            top: 0;
+            max-width: 75%;
+
+            &__title {
+                font-size: 24px;
+            }
+
+            &__subtitle {
+                font-size: 18px;
+            }
+        }
+
+        &__buttons {
+            gap: 20px;
+            grid-template-columns: repeat(1, 91px);
+            grid-template-rows: repeat(4, 91px);
+            right: 0;
+            width: 25%;
+        }
+
+        span {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .benefits {
+        height: 510px;
+
+        &__container {
+            max-width: 1363px;
+            min-width: 320px;
+            height: 610px;
+            padding: 0 20px;
+            bottom: -100px;
+        }
+
+        .wrapper {
+            min-height: 100%;
+            min-width: 0;
+        }
+
+        .description-block.active {
+            display: block;
+        }
+
+        .description-block {
+            max-width: 50%;
+
+            &__title {
+                font-size: 32px;
+            }
+
+            &__subtitle {
+                font-size: 20px;
+            }
+        }
+
+        .description-block__button {
+            width: 223px;
+            height: 59px;
+        }
+
+        &__buttons {
+            grid-template-columns: repeat(2, 243px);
+            grid-template-rows: repeat(2, 243px);
+            top: 10%;
+            gap: 1px;
+            width: auto;
+        }
+
+        &__button {
+            gap: 30px;
+            width: 228px;
+            height: 226px;
+            font-size: 18px;
+
+            span {
+                display: block;
+            }
+
+            svg {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}

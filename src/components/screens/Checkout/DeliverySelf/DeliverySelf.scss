@@ -1,0 +1,62 @@
+@import "../../../../globalStyles/variables";
+@import "../../../../globalStyles/mixins";
+
+.DeliverySelf {
+	&__subtitle {
+		font-weight: 600;
+		margin-bottom: 30px;
+	}
+
+	.select-wrap {
+		position: relative;
+
+		&::before {
+			@include pseudo;
+			right: 10px;
+			top: 24px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 10px 10px 10px;
+			border-color: transparent transparent $scrollNavBar transparent;
+			transition: 0.3s ease-in-out;
+		}
+
+		&.selected {
+			&::before {
+				@include pseudo;
+				right: 10px;
+				top: 28px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 10px 10px 0 10px;
+				border-color: $scrollNavBar transparent transparent transparent;
+			}
+		}
+	}
+
+	.select-restaurant {
+		appearance: none;
+		padding: 10px 10px;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		background: transparent;
+		border-radius: 10px;
+		color: $primaryText;
+		min-height: 60px;
+		display: flex;
+		align-items: center;
+		min-width: 100%;
+		position: relative;
+		font-family: "Ubuntu-Light", "Arial", sans-serif;
+		cursor: pointer;
+
+		option {
+			background-color: $headerBackground;
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}

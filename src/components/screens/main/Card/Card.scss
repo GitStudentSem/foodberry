@@ -1,0 +1,139 @@
+@import "../../../../globalStyles/variables";
+
+.card {
+	border-radius: 10px;
+	width: 320px;
+	height: 400px;
+
+	background: $cardBackground;
+	color: $primaryText;
+
+	transition: 0.3s;
+	cursor: pointer;
+
+	margin: 0 auto;
+
+	&:hover {
+		box-shadow: 0px 20px 20px rgba(43, 40, 40, 0.6);
+	}
+
+	&__image-wrapper {
+		overflow: hidden;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		height: 227px;
+		width: 100%;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+
+		span {
+			width: inherit;
+    		height: inherit;
+
+			img {
+				object-fit: contain;
+			}
+		}
+	}
+
+	&__image {
+		height: 100%;
+	}
+
+	&__main-text {
+		padding: 18px 14px 60px 14px;
+		min-width: 100%;
+	}
+
+	&__card-name {
+		font-weight: 700;
+		font-size: 19px;
+		margin-bottom: 10px;
+	}
+
+	&__card-weight {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+	}
+
+	&__card-about {
+		font-weight: 400;
+		font-size: 13px;
+
+		color: $secondaryText;
+
+		margin-bottom: 10px;
+
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		line-height: 1.3em;
+		height: 2.7em;
+	}
+
+	&__price-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		min-width: 100%;
+	}
+
+	&__card-price {
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	&__cart-button {
+		width: 120px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 13px;
+
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 17px;
+		color: $primaryText;
+
+		transition: 0.3s;
+
+		&:hover {
+			background: linear-gradient(114.93deg, #597e5f 5.11%, #5d8863 94%);
+		}
+	}
+
+	&__cart-add-btn {
+		width: 62px;
+		height: 44px;
+		font-size: 20px;
+
+		color: $primaryText;
+		font-weight: bold;
+		transition: 0.3s;
+
+		&:hover {
+			background: linear-gradient(114.93deg, #83b68a 5.11%, #72a479 94%);
+		}
+
+		&:active {
+			background: linear-gradient(114.93deg, #68906d 5.11%, #72a479 94%);
+		}
+	}
+}
+
+@media screen and (max-width: $phone-md) {
+	.card {
+		width: 300px;
+		margin: 0 auto;
+	}
+
+	.swiper-slide {
+		margin: 0 !important;
+	}
+}

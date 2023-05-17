@@ -2,8 +2,8 @@ import "./CartPage.scss";
 
 import { Link } from "react-router-dom";
 
-import Order from "../../components/CartPage/Order/Order";
-import OfferCard from "../../components/CartPage/OfferCard/OfferCard";
+import Order from "../../components/screens/Cart/Order/Order";
+import OfferCard from "../../components/screens/Cart/OfferCard/OfferCard";
 
 import { food } from "../../dataBase";
 

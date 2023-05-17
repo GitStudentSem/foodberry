@@ -1,0 +1,23 @@
+@import "../../../../globalStyles/variables";
+@import "../../../../globalStyles/mixins";
+
+.ContactsInfo {
+	background: $cardBackground;
+	padding: 30px 25px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+
+	&__subtitle {
+		font-weight: 600;
+		margin-bottom: 30px;
+	}
+
+	&__inputs {
+		display: grid;
+		gap: 17px;
+
+		@media screen and (min-width: $phone-lg) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}

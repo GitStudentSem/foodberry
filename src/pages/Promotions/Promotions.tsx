@@ -1,9 +1,9 @@
 import "./Promotions.scss";
 import promotion from "./promotionsData";
 
-import PromotionCard from '../../components/PromotionCard/PromotionCard';
-import ContactsMap from '../../components/ContactsMap/ContactsMap';
-import Map from "components/Map/Map";
+import PromotionCard from '../../components/screens/Promo/PromotionCard/PromotionCard';
+import ContactsMap from '../../components/screens/main/ContactsMap/ContactsMap';
+import Map from "components/screens/main/Map/Map";
 
 const Promotions = () => {
     return (

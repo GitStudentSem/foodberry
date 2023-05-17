@@ -1,0 +1,149 @@
+@import "../../../../globalStyles/variables";
+@import "../../../../globalStyles/mixins";
+
+.intro {
+	min-height: 296px;
+	background-image: url('../../../../images/yagnonek.jpg');
+	min-width: 100%;
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	color: $primaryText;
+	font-family: 'Russo';
+
+	&::after {
+		@include pseudo;
+		min-width: 100%;
+		min-height: inherit;
+		background: linear-gradient(90deg, rgba(33,31,32,1) 10%, rgba(255, 255, 255, 0) 60%);
+		top: 0;
+		left: 0;
+		z-index: 0;
+	}
+	&::before {
+		@include pseudo;
+		min-width: 100%;
+		min-height: inherit;
+		background: radial-gradient(circle, rgba(33,31,32,1) 0%, rgba(0,0,0,0) 80%);
+		top: 0;
+		left: -50%;
+		z-index: 0;
+	}
+
+	&__wrapper {
+		@include container;
+		position: relative;
+	}
+
+	&__inner {
+		text-transform: uppercase;
+		position: absolute;
+		z-index: 1;
+		text-align: center;
+		margin-top: 135px;
+		font-weight: bold;
+
+		left: 50%;
+		transform: translate(-50%, 0)  rotate(-14deg);
+	}
+
+	&__title {
+		font-size: 20px;
+		display: grid;
+		margin-bottom: 20px;
+		font-style: italic;
+		text-shadow: -5px -5px 0px rgba(255,255,255,0.4);
+		min-width: max-content;
+	}
+
+	&__subtitle {
+		font-size: 14px;
+		font-style: italic;
+		position: relative;
+
+		&::before {
+			@include pseudo;
+			width: 64%;
+			z-index: -1;
+			top: -8px;
+			left: 48px;
+			height: 33px;
+			background: $introButtonColor;
+			transform: skew(318deg, 10deg) rotate(349deg);
+		}
+
+		&::after {
+			@include pseudo;
+			background-image: url("../../../../images/decorIntro.png");
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: -2;
+			width: 90%;
+			height: 60px;
+			top: -14px;
+			left: 8px;
+			transform: skew(326deg, 10deg) rotate(356deg);
+		}
+	}
+}
+
+@media screen and (min-width: $tablet) {
+	.intro {
+		min-height: 350px;
+
+		&__inner {
+			margin-top: 120px;
+		}
+		&__title {
+			font-size: 36px;
+		}
+		&__subtitle {
+			font-size: 26px;
+
+			&::after {
+				height: 92px;
+				top: -19px;
+				left: 13px;
+			}
+
+			&::before {
+				top: -10px;
+				left: 71px;
+				height: 51px;
+			}
+		}
+	}
+
+}
+
+@media screen and (min-width: $desktop) {
+	.intro {
+		min-height: 484px;
+
+		&__inner {
+			left: 0%;
+			transform: translate(5%, 0)  rotate(-14deg);
+		}
+
+		&__title {
+			font-size: 66px;
+		}
+		&__subtitle {
+			font-size: 46px;
+
+			&::after {
+				height: 117px;
+				top: -11px;
+				left: 101px;
+			}
+
+			&::before {
+				top: -7px;
+				left: 115px;
+				height: 72px;
+			}
+		}
+	}
+}

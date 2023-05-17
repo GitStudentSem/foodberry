@@ -1,12 +1,13 @@
 import "./App.scss";
 
-import { Routes, Route } from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 
 import Header from "./layout/Header/Header";
 import Footer from "./layout/Footer/Footer";
 import AppRouter from "AppRouter";
-import { useEffect, useState } from "react";
-import { ICard } from "components/Card/Card";
+import {useEffect, useState} from "react";
+import {ICard} from "components/screens/main/Card/Card";
+import Layout from "./layout/Layout";
 
 function App() {
 	if (localStorage.length === 0) {
@@ -21,9 +22,7 @@ function App() {
 
 	return (
 		<div className="wrapper">
-			<Header orders={orders} />
-			<AppRouter orders={orders} setOrders={setOrders} />
-			<Footer />
+			<Layout><AppRouter orders={orders} setOrders={setOrders}/></Layout>
 		</div>
 	);
 }
